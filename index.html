@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Watcher | Know When to Log Off</title>
+    <meta name="description" content="Calculate exactly what time you should leave work based on your decimal hours worked and target weekly hours.">
+    
+    <!-- Premium Typography: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background glow Orbs for premium look -->
+    <div class="background-glow pos-1"></div>
+    <div class="background-glow pos-2"></div>
+    
+    <main class="container">
+        <header>
+            <h1>Clock Watcher</h1>
+            <p>Know exactly when it's time to log off.</p>
+        </header>
+
+        <section class="card glass">
+            <div class="input-group">
+                <label for="recordedTime">Time recorded</label>
+                <div class="input-wrapper">
+                    <input type="time" id="recordedTime">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="workedHours">Hours worked at that time</label>
+                <div class="input-wrapper">
+                    <input type="number" id="workedHours" placeholder="e.g. 20.57" step="0.01" min="0">
+                    <span class="unit">hrs</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="targetHours">Target hours</label>
+                <div class="input-wrapper">
+                    <input type="number" id="targetHours" placeholder="e.g. 40.00" step="0.01" min="0" value="40">
+                    <span class="unit">hrs</span>
+                </div>
+            </div>
+            
+            <button id="calculateBtn" class="btn-primary">Calculate Exit Time</button>
+        </section>
+
+        <section id="resultsSection" class="results-container hidden">
+            <div class="result-box glass">
+                <p id="currentTotalStr" class="result-detail"></p>
+                <h2>Time to Leave</h2>
+                <div id="leaveTimeStr" class="huge-text gradient-text">--:--</div>
+                <p id="remainingTimeStr" class="subtitle">-- remaining</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
